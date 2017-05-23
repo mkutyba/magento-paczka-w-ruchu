@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <KutybaIt_PaczkaWRuchu>
+            <version>0.1.0</version>
+        </KutybaIt_PaczkaWRuchu>
+    </modules>
+    <global>
+        <helpers>
+            <paczkawruchu>
+                <class>KutybaIt_PaczkaWRuchu_Helper</class>
+            </paczkawruchu>
+        </helpers>
+    </global>
+</config>

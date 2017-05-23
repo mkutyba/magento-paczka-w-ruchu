@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <KutybaIt_PaczkaWRuchu>
+            <active>true</active>
+            <codePool>community</codePool>
+            <depends>
+                <Mage_Shipping/>
+            </depends>
+        </KutybaIt_PaczkaWRuchu>
+    </modules>
+</config>

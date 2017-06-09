@@ -11,5 +11,75 @@
                 <class>KutybaIt_PaczkaWRuchu_Helper</class>
             </paczkawruchu>
         </helpers>
+        <blocks>
+            <paczkawruchu>
+                <class>KutybaIt_PaczkaWRuchu_Block</class>
+            </paczkawruchu>
+        </blocks>
+        <models>
+            <paczkawruchu>
+                <class>KutybaIt_PaczkaWRuchu_Model</class>
+                <resourceModel>paczkawruchu_resource</resourceModel>
+            </paczkawruchu>
+        </models>
+        <resources>
+            <paczkawruchu_setup>
+                <setup>
+                    <module>KutybaIt_PaczkaWRuchu</module>
+                    <class>Mage_Sales_Model_Resource_Setup</class>
+                </setup>
+            </paczkawruchu_setup>
+        </resources>
+        <events>
+            <checkout_controller_onepage_save_shipping_method>
+                <observers>
+                    <savePaczkawruchuDestinationCodeToShipping>
+                        <class>paczkawruchu/observer</class>
+                        <method>savePaczkawruchuDestinationCodeToShipping</method>
+                    </savePaczkawruchuDestinationCodeToShipping>
+                </observers>
+            </checkout_controller_onepage_save_shipping_method>
+            <sales_order_load_after>
+                <observers>
+                    <modifyShippingDescription>
+                        <class>paczkawruchu/observer</class>
+                        <method>modifyShippingDescription</method>
+                    </modifyShippingDescription>
+                </observers>
+            </sales_order_load_after>
+        </events>
+        <fieldsets>
+            <sales_convert_quote>
+                <paczkawruchu_destination_code>
+                    <to_order>*</to_order>
+                </paczkawruchu_destination_code>
+            </sales_convert_quote>
+        </fieldsets>
     </global>
+    <default>
+        <carriers>
+            <paczkawruchu>
+                <model>paczkawruchu/carrier</model>
+                <type>O</type>
+                <handling_type>F</handling_type>
+                <active>0</active>
+                <title>Paczka w RUCHu</title>
+                <name_prepaid>Przedpłata</name_prepaid>
+                <name_cod>Pobranie</name_cod>
+                <price_prepaid>10.00</price_prepaid>
+                <price_cod>20.00</price_cod>
+                <specificerrmsg>Ta metoda dostawy jest aktualnie niedostępna. Jeśli bardzo zależy ci na niej, skontaktuj się z nami.</specificerrmsg>
+                <sallowspecific>0</sallowspecific>
+            </paczkawruchu>
+        </carriers>
+    </default>
+    <frontend>
+        <layout>
+            <updates>
+                <paczkawruchu>
+                    <file>paczkawruchu.xml</file>
+                </paczkawruchu>
+            </updates>
+        </layout>
+    </frontend>
 </config>

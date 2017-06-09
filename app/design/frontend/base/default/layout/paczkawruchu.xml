@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<layout>
+    <checkout_onepage_index>
+        <reference name="head">
+            <action method="addJs">
+                <script>paczkawruchu/jquery.pwrgeopicker.min.js</script>
+            </action>
+            <action method="addJs">
+                <script>paczkawruchu/scripts.js</script>
+            </action>
+            <action method="addCss">
+                <css>css/paczkawruchu.css</css>
+            </action>
+        </reference>
+        <reference name="before_body_end">
+            <block type="core/template"
+                   name="paczkawruchu.scripts"
+                   template="checkout/onepage/shipping_method/paczkawruchu/scripts.phtml"/>
+        </reference>
+    </checkout_onepage_index>
+</layout>

@@ -1,2 +1,8 @@
-app/code/community/KutybaIt/PaczkaWRuchu  app/code/community/KutybaIt/PaczkaWRuchu 
-app/etc/modules/KutybaIt_PaczkaWRuchu.xml app/etc/modules/KutybaIt_PaczkaWRuchu.xml
+app/code/community/KutybaIt/PaczkaWRuchu                     app/code/community/KutybaIt/PaczkaWRuchu
+app/etc/modules/KutybaIt_PaczkaWRuchu.xml                    app/etc/modules/KutybaIt_PaczkaWRuchu.xml
+app/design/frontend/base/default/layout/paczkawruchu.xml     app/design/frontend/base/default/layout/paczkawruchu.xml
+app/design/frontend/base/default/template/paczkawruchu       app/design/frontend/base/default/template/paczkawruchu
+js/paczkawruchu                                              js/paczkawruchu
+skin/frontend/base/default/css/paczkawruchu.css              skin/frontend/base/default/css/paczkawruchu.css
+skin/frontend/base/default/images/paczkawruchu_bg.jpg        skin/frontend/base/default/images/paczkawruchu_bg.jpg
+skin/frontend/base/default/images/paczkawruchu_bg_inline.jpg skin/frontend/base/default/images/paczkawruchu_bg_inline.jpg

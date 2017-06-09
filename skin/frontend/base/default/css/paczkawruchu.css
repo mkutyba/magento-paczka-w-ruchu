@@ -1,0 +1,99 @@
+.paczkawruchu_overlay {
+    background-color: #000000;
+    opacity: 0.6;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+    z-index: 1001;
+}
+.paczkawruchu_main {
+    width: 500px;
+    height: 409px;
+    display: block;
+    z-index: 1002;
+    position: fixed;
+    left: 50%;
+    margin-left: -250px;
+    top: 50%;
+    margin-top: -250px;
+    background-image: url(../images/paczkawruchu_bg.jpg);
+}
+.paczkawruchu_main.inline {
+    border: solid 1px #dedfdb;
+    background-color: #dedfdb;
+    position: relative;
+    left: auto;
+    top: auto;
+    margin: 0px;
+    height: 409px;
+    background-position: center bottom;
+    background-image: url(../images/paczkawruchu_bg_inline.jpg);
+    z-index: inherit;
+}
+.paczkawruchu_close_btn {
+    position: absolute;
+    display: block;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    cursor: pointer;
+}
+.paczkawruchu_input {
+    border: solid 1px #cbcfcf;
+    font-family: Arial;
+    font-size: 16px;
+    margin-top: 40px;
+    padding: 6px;
+    width: 153px !important;
+    float: left;
+    margin-left: 10px;
+}
+.paczkawruchu_main.inline .paczkawruchu_input {
+    top: 40px;
+}
+.paczkawruchu_input_street {
+    left: 208px;
+}
+.paczkawruchu_input_search {
+    left:404px;
+    background-color: #0188d4;
+    color: white;
+    font-weight: bold;
+    border: none;
+    width: 88px;
+    height: 29px;
+    cursor: pointer;
+}
+.paczkawruchu_hover_button {
+    border: none;
+    color: white;
+    padding: 3px 6px;
+    background-color: #1d98cb;
+}
+.paczkawruchu_hover_button:hover {
+    background-color: #0d719b;
+}
+.paczkawruchu_hover_button:active {
+    background-color: #a1cc3a;
+}
+.paczkawruchu_map_object {
+    border: solid 1px rgba(188, 188, 188, 0.75);
+    position: absolute;
+    left: 10px;
+    width: 480px;
+    height: 267px;
+    top: 72px;
+}
+.paczkawruchu_main.inline .paczkawruchu_map_object {
+    top: 72px;
+}
+.pac-container {
+    z-index: 1005;
+}
+.paczkawruchu_field label {
+    padding-left: 10px !important;
+}

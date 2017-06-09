@@ -1,0 +1,19 @@
+<script>
+    if (!window.jQuery) {
+        document.write('<script src="\/\/ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"><\/script>');
+    }
+</script>
+<?php $_mapsApiKey = Mage::helper('paczkawruchu')->getGoogleMapsApiKey(); ?>
+<script type="text/javascript"
+        src="//maps.google.com/maps/api/js?key=<?php echo $_mapsApiKey ?>&sensor=true&language=pl&libraries=places&v=3.17.15"></script>
+
+<script>
+    var pwr = Object.create(PaczkaWRuchu);
+    var gotoSectionOriginal = Checkout.prototype.gotoSection;
+    Checkout.prototype.gotoSection = function (section, reloadProgressBlock) {
+        gotoSectionOriginal.call(checkout, section, reloadProgressBlock);
+        if (section === 'shipping_method') {
+            pwr.init();
+        }
+    };
+</script>

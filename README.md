@@ -14,13 +14,23 @@ Download files and extract to magento directory https://github.com/mkutyba/magen
 
 or
 
-Install using modman
+Install using modman ```modman clone https://github.com/mkutyba/magento-paczka-w-ruchu.git```
 
 or
 
-Install using composer
+Install using composer ```composer require kutybait/magento-paczkawruchu```
 
-How to install a Magento module: http://fbrnc.net/blog/2014/11/how-to-install-a-magento-module
+[How to install a Magento module](http://fbrnc.net/blog/2014/11/how-to-install-a-magento-module)
+
+## Configuration
+
+**System > Configuration > Shipping Methods > Paczka w RUCHu**
+
+Enable shipping method by setting **Enabled** to **Yes**.
+
+It's also needed to provide **Google Maps API Key** for rendering a map.
+
+[Get API Key](https://developers.google.com/maps/documentation/javascript/get-api-key)
 
 ## Magento Onepage Checkout
 

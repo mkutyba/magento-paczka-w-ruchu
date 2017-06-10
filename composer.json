@@ -1,0 +1,16 @@
+{
+  "name": "kutybait/magento-paczkawruchu",
+  "type": "magento-module",
+  "license":"OSL-3.0",
+  "homepage":"https://github.com/mkutyba/magento-paczka-w-ruchu",
+  "description":"Paczka w RUCHu - shipping method",
+  "authors":[
+    {
+      "name":"Mateusz Kutyba",
+      "email":"mateusz@kutyba.it"
+    }
+  ],
+  "require": {
+    "magento-hackathon/magento-composer-installer": "*"
+  }
+}

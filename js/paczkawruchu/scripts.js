@@ -10,6 +10,22 @@ var PaczkaWRuchu = {
     codInputId: 'paczkawruchu_cod_input',
     currentMethod: 'other',
 
+    initMageOnepage: function () {
+        this.init();
+    },
+
+    initIwdOpc: function () {
+        this.init();
+    },
+
+    reinitIwdOpc: function (response) {
+        if (typeof response.shipping !== 'undefined') {
+            this.currentMethod = 'other';
+            this.initIwdOpc();
+            IWD.OPC.Shipping.validateShippingMethod();
+        }
+    },
+
     init: function () {
         this.bindEventHandlers();
         this.prepaidRadio = document.getElementById(this.prepaidRadioId);
@@ -84,6 +100,7 @@ var PaczkaWRuchu = {
         locationForm.appendChild(field);
         this[type + 'Radio'].parentNode.appendChild(locationForm);
         var cod = (type === 'cod');
+        var self = this;
         jQuery('#pwr_' + type).pwrgeopicker('popup', {
             'form': {
                 'city': 'Warszawa'
@@ -94,7 +111,24 @@ var PaczkaWRuchu = {
             'onselect': function (data) {
                 input.value = data['DestinationCode'];
                 label.innerText = data['DestinationCode'] + ' - ' + data['StreetName'] + ' ' + data['City'];
+                self.validate();
+                self.saveShippingMethodIwdOpc();
             }
         });
+    },
+
+    validate: function () {
+        var varienForm = new VarienForm(this[this.currentMethod + 'FormId']);
+        if (typeof varienForm.validator !== 'object' || typeof varienForm.validator.validate !== 'function') {
+            return true;
+        }
+        return varienForm.validator.validate();
+    },
+
+    saveShippingMethodIwdOpc: function () {
+        if (typeof IWD === 'object' && typeof IWD.OPC === 'object' && typeof IWD.OPC.Shipping === 'object'
+            && typeof IWD.OPC.Shipping.saveShippingMethod === 'function') {
+            IWD.OPC.Shipping.saveShippingMethod();
+        }
     }
 };

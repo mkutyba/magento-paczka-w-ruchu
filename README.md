@@ -6,7 +6,9 @@ The module is made in Polish language.
 ## The module should work with:
 - [x] Magento Onepage Checkout
 - [ ] Magento Multishipping
-- [ ] IWD One Page Checkout
+- [x] IWD One Page Checkout v4
+- [x] IWD Checkout Suite v5
+- [ ] IWD Checkout Suite v6
 - [ ] Magento Admin Checkout (Create New Order in backoffice)
 
 ## Installation

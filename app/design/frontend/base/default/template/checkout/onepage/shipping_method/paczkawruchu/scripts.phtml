@@ -9,11 +9,42 @@
 
 <script>
     var pwr = Object.create(PaczkaWRuchu);
+
+    <?php if($this->getCheckoutType() == 'mage/onepage'): ?>
     var gotoSectionOriginal = Checkout.prototype.gotoSection;
     Checkout.prototype.gotoSection = function (section, reloadProgressBlock) {
         gotoSectionOriginal.call(checkout, section, reloadProgressBlock);
         if (section === 'shipping_method') {
-            pwr.init();
+            pwr.initMageOnepage();
         }
     };
+    <?php endif; ?>
+
+    <?php if($this->getCheckoutType() == 'iwd/opc4'): ?>
+    var validateShippingMethodOriginal = IWD.OPC.Shipping.validateShippingMethod;
+    IWD.OPC.Shipping.validateShippingMethod = function () {
+        var shippingChecked = validateShippingMethodOriginal();
+        return shippingChecked && pwr.validate();
+    };
+
+    var prepareAddressResponseOriginal = IWD.OPC.Checkout.prepareAddressResponse;
+    IWD.OPC.Checkout.prepareAddressResponse = function (response) {
+        prepareAddressResponseOriginal(response);
+        pwr.reinitIwdOpc(response);
+    };
+
+    var reloadShippingsPaymentsResponseOriginal = IWD.OPC.Checkout.reloadShippingsPaymentsResponse;
+    IWD.OPC.Checkout.reloadShippingsPaymentsResponse = function (response) {
+        reloadShippingsPaymentsResponseOriginal(response);
+        pwr.reinitIwdOpc(response);
+    };
+
+    var prepareResponseOriginal = IWD.OPC.Checkout.prepareResponse;
+    IWD.OPC.Checkout.prepareResponse = function (response) {
+        prepareResponseOriginal(response);
+        pwr.reinitIwdOpc(response);
+    };
+
+    pwr.initIwdOpc();
+    <?php endif; ?>
 </script>

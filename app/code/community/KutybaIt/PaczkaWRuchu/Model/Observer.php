@@ -2,7 +2,14 @@
 
 class KutybaIt_PaczkaWRuchu_Model_Observer
 {
-    // event checkout_controller_onepage_save_shipping_method
+    /**
+     * events:
+     * - checkout_controller_onepage_save_shipping_method
+     * - controller_action_postdispatch_iwd_opc_json_saveShippingMethod
+     *
+     * @param $observer
+     * @return $this
+     */
     public function savePaczkawruchuDestinationCodeToShipping($observer)
     {
         $event = $observer->getEvent();
@@ -14,6 +21,11 @@ class KutybaIt_PaczkaWRuchu_Model_Observer
         $request = $event->getRequest();
         /** @var Mage_Sales_Model_Quote $quote */
         $quote = $event->getQuote();
+
+        if (!$request || !$quote) {
+            $request = $event->getControllerAction()->getRequest();
+            $quote = $event->getControllerAction()->getQuote();
+        }
 
         if (!$request || !$quote) {
             return $this;

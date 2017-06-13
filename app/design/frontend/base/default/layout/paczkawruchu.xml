@@ -45,4 +45,27 @@
             </block>
         </reference>
     </opc_index_index>
+
+    <iwd_opc_index_index>
+        <reference name="head">
+            <action method="addJs">
+                <script>paczkawruchu/jquery.pwrgeopicker.min.js</script>
+            </action>
+            <action method="addJs">
+                <script>paczkawruchu/scripts.js</script>
+            </action>
+            <action method="addCss">
+                <css>css/paczkawruchu.css</css>
+            </action>
+        </reference>
+        <reference name="before_body_end">
+            <block type="core/template"
+                   name="paczkawruchu.scripts"
+                   template="checkout/onepage/shipping_method/paczkawruchu/scripts.phtml">
+                <action method="setCheckoutType">
+                    <type>iwd/opc6</type>
+                </action>
+            </block>
+        </reference>
+    </iwd_opc_index_index>
 </layout>

@@ -8,7 +8,7 @@ The module is made in Polish language.
 - [ ] Magento Multishipping
 - [x] IWD One Page Checkout v4
 - [x] IWD Checkout Suite v5
-- [ ] IWD Checkout Suite v6
+- [x] IWD Checkout Suite v6
 - [ ] Magento Admin Checkout (Create New Order in backoffice)
 
 ## Installation

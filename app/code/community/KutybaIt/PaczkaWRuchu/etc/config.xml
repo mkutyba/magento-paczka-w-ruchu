@@ -2,7 +2,7 @@
 <config>
     <modules>
         <KutybaIt_PaczkaWRuchu>
-            <version>0.1.0</version>
+            <version>0.2.0</version>
         </KutybaIt_PaczkaWRuchu>
     </modules>
     <global>
@@ -39,6 +39,14 @@
                     </savePaczkawruchuDestinationCodeToShipping>
                 </observers>
             </checkout_controller_onepage_save_shipping_method>
+            <controller_action_postdispatch_iwd_opc_json_saveShippingMethod>
+                <observers>
+                    <savePaczkawruchuDestinationCodeToShipping_IwdOpc6>
+                        <class>paczkawruchu/observer</class>
+                        <method>savePaczkawruchuDestinationCodeToShipping</method>
+                    </savePaczkawruchuDestinationCodeToShipping_IwdOpc6>
+                </observers>
+            </controller_action_postdispatch_iwd_opc_json_saveShippingMethod>
             <sales_order_load_after>
                 <observers>
                     <modifyShippingDescription>

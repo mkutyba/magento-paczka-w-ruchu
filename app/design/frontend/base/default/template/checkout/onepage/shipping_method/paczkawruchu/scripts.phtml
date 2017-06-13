@@ -23,28 +23,52 @@
     <?php if($this->getCheckoutType() == 'iwd/opc4'): ?>
     var validateShippingMethodOriginal = IWD.OPC.Shipping.validateShippingMethod;
     IWD.OPC.Shipping.validateShippingMethod = function () {
-        var shippingChecked = validateShippingMethodOriginal();
-        return shippingChecked && pwr.validate();
+        return validateShippingMethodOriginal() && pwr.validate();
     };
 
     var prepareAddressResponseOriginal = IWD.OPC.Checkout.prepareAddressResponse;
     IWD.OPC.Checkout.prepareAddressResponse = function (response) {
         prepareAddressResponseOriginal(response);
-        pwr.reinitIwdOpc(response);
+        pwr.reinitIwdOpc4(response);
     };
 
     var reloadShippingsPaymentsResponseOriginal = IWD.OPC.Checkout.reloadShippingsPaymentsResponse;
     IWD.OPC.Checkout.reloadShippingsPaymentsResponse = function (response) {
         reloadShippingsPaymentsResponseOriginal(response);
-        pwr.reinitIwdOpc(response);
+        pwr.reinitIwdOpc4(response);
     };
 
     var prepareResponseOriginal = IWD.OPC.Checkout.prepareResponse;
     IWD.OPC.Checkout.prepareResponse = function (response) {
         prepareResponseOriginal(response);
-        pwr.reinitIwdOpc(response);
+        pwr.reinitIwdOpc4(response);
     };
 
-    pwr.initIwdOpc();
+    pwr.initIwdOpc4();
+    <?php endif; ?>
+
+    <?php if($this->getCheckoutType() == 'iwd/opc6'): ?>
+    var applyResponseOriginal = ShippingMethod.prototype.applyResponse;
+    ShippingMethod.prototype.applyResponse = function (methods) {
+        applyResponseOriginal(methods);
+        pwr.reinitIwdOpc6();
+    };
+
+    var getSaveDataOriginal = ShippingMethod.prototype.getSaveData;
+    ShippingMethod.prototype.getSaveData = function () {
+        var data = getSaveDataOriginal.call(Singleton.get(ShippingMethod));
+
+        var pwrInput = document.getElementById(pwr[pwr.currentMethod + 'InputId']);
+        if (pwrInput) {
+            data.push({
+                'name': pwrInput.name,
+                'value': pwrInput.value
+            });
+        }
+
+        return data;
+    };
+
+    pwr.initIwdOpc6();
     <?php endif; ?>
 </script>

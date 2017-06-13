@@ -38,3 +38,13 @@ It's also needed to provide **Google Maps API Key** for rendering a map.
 
 ![Onepage Checkout](/docs/osc.png?raw=true)
 ![Onepage Checkout popup](/docs/osc-popup.png?raw=true)
+
+## IWD One Page Checkout v4 and IWD Checkout Suite v5
+
+![One Page Checkout](/docs/iwd-opc4.png?raw=true)
+![One Page Checkout popup](/docs/iwd-opc4-popup.png?raw=true)
+
+## IWD Checkout Suite v6
+
+![Checkout Suite](/docs/iwd-opc6.png?raw=true)
+![Checkout Suite popup](/docs/iwd-opc6-popup.png?raw=true)

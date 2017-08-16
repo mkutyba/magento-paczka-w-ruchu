@@ -1,4 +1,6 @@
 # Magento Paczka w RUCHu - shipping method
+Blog post https://kutyba.it/blog/paczka-w-ruchu-modul-do-magento-1-9.html
+
 Paczka w RUCHu is logistics service based in Poland https://www.paczkawruchu.pl/
 
 The module is made in Polish language.

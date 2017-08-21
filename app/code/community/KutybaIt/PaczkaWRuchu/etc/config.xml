@@ -2,7 +2,7 @@
 <config>
     <modules>
         <KutybaIt_PaczkaWRuchu>
-            <version>0.2.0</version>
+            <version>0.2.1</version>
         </KutybaIt_PaczkaWRuchu>
     </modules>
     <global>

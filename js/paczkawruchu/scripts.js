@@ -147,7 +147,7 @@ var PaczkaWRuchu = {
         field.appendChild(input);
         locationForm.appendChild(field);
         this[type + 'Radio'].parentNode.appendChild(locationForm);
-        var cod = (type === this.codName);
+        var cod = (type === this.codName ? true : null);
         var self = this;
         jQuery('#pwr_' + type).pwrgeopicker('popup', {
             'form': {
@@ -188,7 +188,7 @@ var PaczkaWRuchu = {
         field.appendChild(input);
         locationForm.appendChild(field);
         document.getElementById('iwd_opc_shipping_rates').parentNode.appendChild(locationForm);
-        var cod = (type === this.codName);
+        var cod = (type === this.codName ? true : null);
         var self = this;
         jQuery('#pwr_' + type).pwrgeopicker('popup', {
             'form': {
